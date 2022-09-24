@@ -101,11 +101,6 @@ class ComicsCard extends ConsumerWidget {
               child: IconButton(
                 onPressed: () async {
                   ref.read(comicProvider(comicsModel).notifier).isFav();
-                  if (!newModel.isFav) {
-                    await _hiveRepository.addComic(newModel);
-                  } else {
-                    await _hiveRepository.deleteComic(newModel);
-                  }
                 },
                 icon: Icon(
                   Icons.favorite,
